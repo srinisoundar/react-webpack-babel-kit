@@ -5,7 +5,7 @@ import style from '../styles/Helloform.scss';
 class HelloForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {name: 'srini'};
+        this.state = {name: 'world'};
     }
 
     render() {

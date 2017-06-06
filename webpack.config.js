@@ -45,7 +45,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
+                use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
                         use: [
                             {
                                 loader: "css-loader" // translates CSS into CommonJS
@@ -54,10 +54,9 @@ module.exports = {
                                 loader: "sass-loader" // compiles Sass to CSS
                             }
                         ],
-                        // use style-loader in development
-                        fallback: "style-loader"
+                        fallback: "style-loader" // used when css not extracted
                     }
-                )
+                ))
             },
             {
                 test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
